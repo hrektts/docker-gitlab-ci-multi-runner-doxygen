@@ -6,7 +6,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /home/gitlab_ci_multi_runner/doc \
-    chown gitlab_ci_multi_runner:gitlab_ci_multi_runner /home/gitlab_ci_multi_runner/doc
+ && chown gitlab_ci_multi_runner:gitlab_ci_multi_runner /home/gitlab_ci_multi_runner/doc
 
 WORKDIR "${GITLAB_CI_MULTI_RUNNER_HOME_DIR}"
 
