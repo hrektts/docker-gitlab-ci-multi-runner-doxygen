@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker info
+  - docker build -t hrektts/gitlab-ci-multi-runner-doxygen .
+
+script:
+  - docker run -it hrektts/gitlab-ci-multi-runner-doxygen doxygen --version
+  - docker run -it hrektts/gitlab-ci-multi-runner-doxygen dot -V
